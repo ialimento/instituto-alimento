@@ -298,7 +298,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,102,204,0.3) 0%, transparent 70%),
     radial-gradient(ellipse 40% 40% at 80% 100%, rgba(240,165,0,0.15) 0%, transparent 60%);
   pointer-events: none;
@@ -880,50 +880,49 @@ footer a { color: var(--blue-300); text-decoration: none; }
   <span>WhatsApp</span>
 </a>
 
+<!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-brand" style="cursor:default">
+  <div class="nav-brand" onclick="showPage('home')">
     <div class="nav-brand-text">
       <span class="nav-brand-title">Instituto del Alimento</span>
       <span class="nav-brand-sub">Municipalidad de Rosario</span>
     </div>
   </div>
+  <ul class="nav-links">
+    <li><a href="index.html">⬅️ Volver al Portal</a></li>
+    <li><a onclick="showPage('home')" id="nav-home">Inicio</a></li>
+    <li><a onclick="showPage('nuevo-carnet')" id="nav-nuevo-carnet">Nuevo Carnet</a></li>
+    <li><a onclick="showPage('renovacion')" id="nav-renovacion">Renovación</a></li>
+    <li><a onclick="showPage('jardines')" id="nav-jardines">Jardines</a></li>
+    <li><a onclick="showPage('faq')" id="nav-faq" class="nav-cta">Consultas Frecuentes</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">⬅️ Volver al Portal</a>
+  <a onclick="showPage('home');toggleMenu()">🏠 Inicio</a>
+  <a onclick="showPage('nuevo-carnet');toggleMenu()">📋 Nuevo Carnet</a>
+  <a onclick="showPage('renovacion');toggleMenu()">🔄 Renovación</a>
+  <a onclick="showPage('jardines');toggleMenu()">👩‍🏫 Jardines de Infantes</a>
+  <a onclick="showPage('faq');toggleMenu()">❓ Consultas Frecuentes</a>
+</div>
 
-<div class="page active" style="padding-top: 64px;">
+<!-- ════════════════════════════════
+     PAGE: CONTENT
+════════════════════════════════ -->
+<div class="page active" id="page-home">
   <section class="hero">
     <div class="hero-badge">📱 Municipalidad de Rosario · Secretaría de Salud Pública</div>
-    <h1 class="hero-title">Instituto del Alimento<br><span>Dr. Benjamín Berisso</span></h1>
-    <p class="hero-subtitle">Seleccioná el departamento al que deseás acceder.</p>
+    <h1 class="hero-title">Departamento de<br><span>Auditoría</span></h1>
   </section>
-
   <section class="cards-section">
-    <h2 class="section-title">Departamentos</h2>
-    <div class="main-grid stagger">
-      <a href="educativo.html" class="main-card accent-gold">
-        <span class="card-icon">👩‍🏫</span>
-        <div class="card-title">Educativo</div>
-        <div class="card-desc">Trámites, información, carnet de manipulación de alimentos, turnos y renovación.</div>
-      </a>
-      <a href="auditoria.html" class="main-card">
-        <span class="card-icon">📋</span>
-        <div class="card-title">Auditoría</div>
-        <div class="card-desc">Área de auditoría y control de alimentos.</div>
-      </a>
-      <a href="laboratorio.html" class="main-card">
-        <span class="card-icon">🔬</span>
-        <div class="card-title">Laboratorio</div>
-        <div class="card-desc">Análisis y evaluación de muestras alimenticias.</div>
-      </a>
-      <a href="administracion.html" class="main-card">
-        <span class="card-icon">🏢</span>
-        <div class="card-title">Administración</div>
-        <div class="card-desc">Gestión administrativa y atención al público.</div>
-      </a>
-    </div>
+    <h2 class="section-title">Sección en Construcción</h2>
+    <p style="text-align: center; color: var(--gray-600); font-size: 1.2rem; margin-top: 2rem;">El contenido de esta sección estará disponible próximamente.</p>
   </section>
-
-<footer>
+  <footer>
     <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
     Municipalidad de Rosario · Secretaría de Salud Pública<br>
     Lima 865, Rosario · Lunes a viernes 8 a 12 hs<br>
@@ -931,6 +930,9 @@ footer a { color: var(--blue-300); text-decoration: none; }
     Última actualización: Mayo 2026
   </footer>
 </div>
+<!-- ════════════════════════════════
+     README para GitHub
+════════════════════════════════ -->
 <script>
 /* ══════════════════════════
    CANVAS BACKGROUND ANIMATION
