@@ -298,7 +298,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,102,204,0.3) 0%, transparent 70%),
     radial-gradient(ellipse 40% 40% at 80% 100%, rgba(240,165,0,0.15) 0%, transparent 60%);
   pointer-events: none;
@@ -880,50 +880,97 @@ footer a { color: var(--blue-300); text-decoration: none; }
   <span>WhatsApp</span>
 </a>
 
+<!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-brand" style="cursor:default">
+  <div class="nav-brand" onclick="showPage('home')">
     <div class="nav-brand-text">
       <span class="nav-brand-title">Instituto del Alimento</span>
       <span class="nav-brand-sub">Municipalidad de Rosario</span>
     </div>
   </div>
+  <ul class="nav-links">
+    <li><a href="index.html">⬅️ Volver al Portal</a></li>
+    <li><a onclick="showPage('home')" id="nav-home">Inicio</a></li>
+    <li><a onclick="showPage('nuevo-carnet')" id="nav-nuevo-carnet">Nuevo Carnet</a></li>
+    <li><a onclick="showPage('renovacion')" id="nav-renovacion">Renovación</a></li>
+    <li><a onclick="showPage('jardines')" id="nav-jardines">Jardines</a></li>
+    <li><a onclick="showPage('faq')" id="nav-faq" class="nav-cta">Consultas Frecuentes</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">⬅️ Volver al Portal</a>
+  <a onclick="showPage('home');toggleMenu()">🏠 Inicio</a>
+  <a onclick="showPage('nuevo-carnet');toggleMenu()">📋 Nuevo Carnet</a>
+  <a onclick="showPage('renovacion');toggleMenu()">🔄 Renovación</a>
+  <a onclick="showPage('jardines');toggleMenu()">👩‍🏫 Jardines de Infantes</a>
+  <a onclick="showPage('faq');toggleMenu()">❓ Consultas Frecuentes</a>
+</div>
 
-<div class="page active" style="padding-top: 64px;">
+<!-- ════════════════════════════════
+     PAGE: HOME
+════════════════════════════════ -->
+<div class="page active" id="page-home">
   <section class="hero">
     <div class="hero-badge">📱 Municipalidad de Rosario · Secretaría de Salud Pública</div>
     <h1 class="hero-title">Instituto del Alimento<br><span>Dr. Benjamín Berisso</span></h1>
-    <p class="hero-subtitle">Seleccioná el departamento al que deseás acceder.</p>
-  </section>
-
-  <section class="cards-section">
-    <h2 class="section-title">Departamentos</h2>
-    <div class="main-grid stagger">
-      <a href="educativo.html" class="main-card accent-gold">
-        <span class="card-icon">👩‍🏫</span>
-        <div class="card-title">Educativo</div>
-        <div class="card-desc">Trámites, información, carnet de manipulación de alimentos, turnos y renovación.</div>
-      </a>
-      <a href="auditoria.html" class="main-card">
-        <span class="card-icon">📋</span>
-        <div class="card-title">Auditoría</div>
-        <div class="card-desc">Área de auditoría y control de alimentos.</div>
-      </a>
-      <a href="laboratorio.html" class="main-card">
-        <span class="card-icon">🔬</span>
-        <div class="card-title">Laboratorio</div>
-        <div class="card-desc">Análisis y evaluación de muestras alimenticias.</div>
-      </a>
-      <a href="administracion.html" class="main-card">
-        <span class="card-icon">🏢</span>
-        <div class="card-title">Administración</div>
-        <div class="card-desc">Gestión administrativa y atención al público.</div>
-      </a>
+    <p class="hero-subtitle">Antes de enviar un mail, revisá esta guía. La mayoría de las consultas están respondidas acá.</p>
+    <div class="hero-alert">
+      <span>📌</span>
+      <span>Este sitio es <strong>informativo</strong>. Los trámites se realizan en los canales oficiales.</span>
     </div>
   </section>
 
-<footer>
+  <section class="cards-section">
+    <p class="section-label">¿Qué necesitás hacer?</p>
+    <h2 class="section-title">Elegí tu trámite</h2>
+    <div class="main-grid stagger">
+      <div class="main-card" onclick="showPage('nuevo-carnet')">
+        <span class="card-icon">📋</span>
+        <div class="card-title">Nuevo Carnet</div>
+        <div class="card-desc">Primera vez o carnet vencido en 2024 o antes. Obtené tu carnet de manipulación de alimentos.</div>
+        <div class="card-arrow">
+          Ver pasos
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="main-card accent-gold" onclick="showPage('renovacion')">
+        <span class="card-icon">🔄</span>
+        <div class="card-title">Renovación</div>
+        <div class="card-desc">Carnet con vencimiento en 2025, 2026 o 2027. Renovalo de forma presencial en Lima 865.</div>
+        <div class="card-arrow">
+          Ver cómo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="main-card" onclick="showPage('jardines')">
+        <span class="card-icon">👩‍🏫</span>
+        <div class="card-title">Jardines de Infantes</div>
+        <div class="card-desc">Taller presencial de 2 encuentros para personal de jardines. Inscripción por correo.</div>
+        <div class="card-arrow">
+          Más info
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="main-card" onclick="showPage('faq')">
+        <span class="card-icon">❓</span>
+        <div class="card-title">Consultas Frecuentes</div>
+        <div class="card-desc">Turnos, pagos, carnet digital, correo electrónico y renovación. Todo respondido acá.</div>
+        <div class="card-arrow">
+          Ver consultas
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
     <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
     Municipalidad de Rosario · Secretaría de Salud Pública<br>
     Lima 865, Rosario · Lunes a viernes 8 a 12 hs<br>
@@ -931,6 +978,417 @@ footer a { color: var(--blue-300); text-decoration: none; }
     Última actualización: Mayo 2026
   </footer>
 </div>
+
+<!-- ════════════════════════════════
+     PAGE: NUEVO CARNET
+════════════════════════════════ -->
+<div class="page" id="page-nuevo-carnet">
+  <section class="info-hero">
+    <span class="info-icon">📋</span>
+    <h1 class="info-title">Nuevo Carnet</h1>
+  </section>
+
+  <div class="info-content">
+    <button class="btn-back" onclick="showPage('home')">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <div class="info-card">
+      <h3>⚠️ ¿Quiénes deben tramitar el Nuevo Carnet?</h3>
+      <div class="tag-group">
+        <span class="tag tag-blue">✔️ Personas sin carnet</span>
+        <span class="tag tag-amber">✔️ Carnet vencido en 2024 o antes</span>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🕗 Horarios de turnos</h3>
+      <div class="info-row">
+        <span class="info-row-icon">🗓️</span>
+        <div class="info-row-text"><strong>Días</strong> Lunes a viernes</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">⏰</span>
+        <div class="info-row-text"><strong>Horario de inscripción</strong> 8 a 9 hs online (hacer clic en el link debajo)</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🌐 Iniciá el trámite</h3>
+      <p style="font-size:14px;color:var(--gray-600);margin-bottom:20px;line-height:1.6;">
+        El proceso de inscripción se realiza a través del portal oficial de la Municipalidad de Rosario.
+      </p>
+      <a href="https://www.rosario.gob.ar/inicio/carnet-de-manipulacion-de-alimentos" target="_blank" rel="noopener" class="btn-primary">
+        👉 Ir a la web oficial
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-3M10 2h4m0 0v4m0-4L8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
+    Lima 865, Rosario · <a href="mailto:educativo_ia@rosario.gob.ar">educativo_ia@rosario.gob.ar</a>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════
+     PAGE: RENOVACIÓN
+════════════════════════════════ -->
+<div class="page" id="page-renovacion">
+  <section class="info-hero">
+    <span class="info-icon">🔄</span>
+    <h1 class="info-title">Renovación de Carnet</h1>
+  </section>
+
+  <div class="info-content">
+    <button class="btn-back" onclick="showPage('home')">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <div class="info-card">
+      <h3>✅ ¿Quiénes pueden renovar?</h3>
+      <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px;">Carnets con las siguientes fechas de vencimiento:</p>
+      <div class="tag-group">
+        <span class="tag tag-green">✔️ 2025</span>
+        <span class="tag tag-green">✔️ 2026</span>
+        <span class="tag tag-green">✔️ 2027</span>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>📍 Dónde y cuándo</h3>
+      <div class="info-row">
+        <span class="info-row-icon">🏢</span>
+        <div class="info-row-text"><strong>Dirección</strong>Lima 865 (ingreso por Pasaje Paroissien)</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">🗓️</span>
+        <div class="info-row-text"><strong>Días</strong>Lunes a viernes</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">⏰</span>
+        <div class="info-row-text"><strong>Horario</strong>8 a 12 hs</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">⚠️</span>
+        <div class="info-row-text"><strong>Máximo</strong>2 turnos por persona</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>👤 ¿Puede ir otra persona?</h3>
+      <p style="font-size:14px;color:var(--gray-600);margin-bottom:14px;">Sí. Puede asistir otra persona en tu nombre llevando los siguientes datos:</p>
+      <div class="info-row">
+        <span class="info-row-icon">📝</span>
+        <div class="info-row-text">Nombre y apellido completo</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">🪪</span>
+        <div class="info-row-text">DNI</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">📱</span>
+        <div class="info-row-text">Número de celular</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">📧</span>
+        <div class="info-row-text">Correo electrónico</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">🏠</span>
+        <div class="info-row-text">Domicilio</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
+    Lima 865, Rosario · <a href="mailto:educativo_ia@rosario.gob.ar">educativo_ia@rosario.gob.ar</a>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════
+     PAGE: JARDINES
+════════════════════════════════ -->
+<div class="page" id="page-jardines">
+  <section class="info-hero">
+    <span class="info-icon">👩‍🏫</span>
+    <h1 class="info-title">Jardines de Infantes</h1>
+  </section>
+
+  <div class="info-content">
+    <button class="btn-back" onclick="showPage('home')">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <div class="info-card">
+      <h3>📚 Modalidad del curso</h3>
+      <div class="info-row">
+        <span class="info-row-icon">🏫</span>
+        <div class="info-row-text"><strong>Formato</strong>Taller presencial de 2 encuentros</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">🔄</span>
+        <div class="info-row-text"><strong>¿Sirve para renovar?</strong>Sí. Es el mismo curso para renovación</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>⚠️ Importante antes de inscribirte</h3>
+      <div class="tag-group" style="margin-bottom:0">
+        <span class="tag tag-amber">⚠️ Cupos limitados</span>
+        <span class="tag tag-amber">📞 Confirmación posterior</span>
+        <span class="tag tag-amber">❌ Puede cancelarse</span>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>✉️ Cómo inscribirse</h3>
+      <p style="font-size:14px;color:var(--gray-600);margin-bottom:16px;">Enviá un mail a <a href="mailto:educativo_ia@rosario.gob.ar" style="color:var(--blue-600);font-weight:600;">educativo_ia@rosario.gob.ar</a> con los siguientes datos:</p>
+      <div class="info-row"><span class="info-row-icon">👤</span><div class="info-row-text">Nombre completo</div></div>
+      <div class="info-row"><span class="info-row-icon">🪪</span><div class="info-row-text">DNI</div></div>
+      <div class="info-row"><span class="info-row-icon">📧</span><div class="info-row-text">Correo electrónico</div></div>
+      <div class="info-row"><span class="info-row-icon">📱</span><div class="info-row-text">Celular</div></div>
+      <div class="info-row"><span class="info-row-icon">🏠</span><div class="info-row-text">Domicilio</div></div>
+      <div class="info-row"><span class="info-row-icon">🪪</span><div class="info-row-text">Número de carnet (si tenés)</div></div>
+      <div style="margin-top:20px;">
+        <a href="mailto:educativo_ia@rosario.gob.ar?subject=Inscripción Jardines de Infantes" class="btn-primary">
+          📧 Enviar mail de inscripción
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
+    Lima 865, Rosario · <a href="mailto:educativo_ia@rosario.gob.ar">educativo_ia@rosario.gob.ar</a>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════
+     PAGE: FAQ
+════════════════════════════════ -->
+<div class="page" id="page-faq">
+  <section class="info-hero">
+    <span class="info-icon">❓</span>
+    <h1 class="info-title">Consultas Frecuentes</h1>
+  </section>
+
+  <div class="info-content" style="max-width:860px;">
+    <button class="btn-back" onclick="showPage('home')">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <p class="section-label">Categorías</p>
+    <h2 class="section-title" style="margin-bottom:20px;">¿Sobre qué es tu consulta?</h2>
+
+    <div class="faq-grid">
+      <div class="faq-cat-card active" onclick="showFaqPanel('turnos',this)">
+        <span class="faq-cat-icon">📅</span>
+        <div class="faq-cat-title">Turnos e Inscripciones</div>
+      </div>
+      <div class="faq-cat-card" onclick="showFaqPanel('pagos',this)">
+        <span class="faq-cat-icon">💳</span>
+        <div class="faq-cat-title">Pagos</div>
+      </div>
+      <div class="faq-cat-card" onclick="showFaqPanel('carnet',this)">
+        <span class="faq-cat-icon">📩</span>
+        <div class="faq-cat-title">Carnet Digital y Correo</div>
+      </div>
+      <div class="faq-cat-card" onclick="showFaqPanel('renovacion',this)">
+        <span class="faq-cat-icon">🔄</span>
+        <div class="faq-cat-title">Renovación</div>
+      </div>
+    </div>
+
+    <!-- PANEL TURNOS -->
+    <div class="faq-panel active" id="panel-turnos">
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>No puedo anular la inscripción</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Podés anular tu inscripción al curso desde el mail que llegó a tu casilla de correo electrónico. La opción <strong>"ANULAR INSCRIPCIÓN"</strong> permanece disponible hasta <strong>4 días antes</strong> del inicio de la capacitación.
+          <div class="warn">⚠️ Una vez que el botón deja de estar disponible, no es posible cancelar la inscripción desde la página. Deberás esperar a que finalice el segundo encuentro para volver a inscribirte y realizar nuevamente todo el proceso, incluyendo un nuevo pago.</div>
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>Avisé por mail que no podía asistir, ¿queda registrado?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          No. Aunque hayas avisado por correo electrónico, si no asististe a la capacitación deberás <strong>realizar nuevamente todo el proceso de inscripción y abonar un nuevo curso</strong>.
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>No pude asistir a una de las clases, ¿pierdo todo?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <strong>Sí. La asistencia a las dos clases es obligatoria.</strong> Si abonaste el curso y asististe solamente a una de las clases, deberás realizar nuevamente toda la capacitación y efectuar un nuevo pago.
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>Me equivoqué de fecha / perdí el turno</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Si no asististe al turno asignado, deberás esperar a que finalice la segunda clase para poder volver a inscribirte.
+          <div class="warn">⚠️ Será necesario realizar nuevamente todo el proceso y efectuar un nuevo pago.</div>
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>Tuve un problema médico o familiar</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Aunque hayas tenido un inconveniente médico, familiar o laboral, si no pudiste completar las dos clases deberás realizar nuevamente toda la capacitación y efectuar un nuevo pago.
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>¿Cómo sé si estoy inscripto?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          La confirmación de inscripción llega al correo electrónico informado durante el registro. Verificá:
+          <div class="ok">✔️ Bandeja principal &nbsp;|&nbsp; ✔️ Correo no deseado / SPAM</div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- PANEL PAGOS -->
+    <div class="faq-panel" id="panel-pagos">
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>¿Tengo que llevar el cupón de pago?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <strong>No es necesario presentar el cupón de pago</strong> para asistir a la capacitación. El pago impacta automáticamente en el sistema luego de aproximadamente <strong>72 hs hábiles</strong>. Una vez aprobado el curso y registradas las dos asistencias, aparecerá la opción para generar el carnet digital.
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>¿Cómo sé si el pago impactó?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Los pagos pueden demorar hasta <strong>72 hs hábiles</strong> en impactar en el sistema. Luego de ese plazo, si el curso fue aprobado y las dos asistencias fueron registradas correctamente, se habilitará el botón para generar el carnet digital.
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>¿Me devuelven el dinero si falté?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <div class="warn">❌ No. El dinero abonado no se reintegra en caso de inasistencia.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- PANEL CARNET DIGITAL -->
+    <div class="faq-panel" id="panel-carnet">
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>No me llega el carnet digital</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Primero verificá:
+          <div class="ok">✔️ Bandeja SPAM &nbsp;|&nbsp; ✔️ Que el correo ingresado sea correcto</div>
+          <br>Si hubo un error en el mail registrado, enviá un correo a <strong><a href="mailto:educativo_ia@rosario.gob.ar" style="color:var(--blue-600);">educativo_ia@rosario.gob.ar</a></strong> indicando: nombre y apellido, DNI y correo electrónico correcto.
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>Registraron mal mi mail</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Enviá un correo a <strong><a href="mailto:educativo_ia@rosario.gob.ar" style="color:var(--blue-600);">educativo_ia@rosario.gob.ar</a></strong> solicitando la corrección de datos e indicando:
+          <br><br>• Nombre y apellido<br>• DNI<br>• Correo electrónico correcto
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>No encuentro el mail de confirmación</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <div class="ok">✔️ Revisá la bandeja principal &nbsp;|&nbsp; ✔️ SPAM / Correo no deseado</div>
+          <br>También verificá haber ingresado correctamente el correo electrónico durante la inscripción.
+        </div></div>
+      </div>
+    </div>
+
+    <!-- PANEL RENOVACIÓN FAQ -->
+    <div class="faq-panel" id="panel-renovacion">
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>Se me venció el carnet, ¿debo hacer todo de nuevo?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Depende de la fecha de vencimiento:
+          <div class="ok">✔️ Si el carnet vence en <strong>2025, 2026 o 2027</strong> → corresponde renovación.</div>
+          <div class="warn" style="margin-top:8px">⚠️ Si venció en <strong>2024 o antes</strong> → debe realizar el trámite como Nuevo Carnet.</div>
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>No puedo sacar turno para renovar</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          Los turnos de renovación se gestionan <strong>presencialmente</strong> en:
+          <div class="ok" style="margin-top:10px;">📍 Lima 865 &nbsp;|&nbsp; 🕗 Lunes a viernes, 8 a 12 hs</div>
+          <br>Puede asistir otra persona con tus datos personales.
+        </div></div>
+      </div>
+
+      <div class="accordion-item" onclick="toggleAccordion(this)">
+        <div class="accordion-header">
+          <div class="accordion-q"><div class="accordion-q-icon">?</div>¿Hay que ir sin turno?</div>
+          <svg class="accordion-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <div class="warn">⚠️ No. La renovación requiere turno previo gestionado presencialmente en Lima 865.</div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
+    Lima 865, Rosario · <a href="mailto:educativo_ia@rosario.gob.ar">educativo_ia@rosario.gob.ar</a>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════
+     README para GitHub
+════════════════════════════════ -->
 <script>
 /* ══════════════════════════
    CANVAS BACKGROUND ANIMATION
