@@ -298,7 +298,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,102,204,0.3) 0%, transparent 70%),
     radial-gradient(ellipse 40% 40% at 80% 100%, rgba(240,165,0,0.15) 0%, transparent 60%);
   pointer-events: none;
@@ -909,31 +909,58 @@ footer a { color: var(--blue-300); text-decoration: none; }
 </div>
 
 
-<div class="page active" id="page-home" style="display: block;">
-  <section class="hero">
-    <div class="hero-badge">📱 Municipalidad de Rosario · Secretaría de Salud Pública</div>
-    <h1 class="hero-title" style="font-size: clamp(26px, 4vw, 42px);">INFORMACIÓN INSTITUCIONAL<br><span>INSTITUTO DEL ALIMENTO "DR. BENJAMÍN BERISSO"</span></h1>
+<div class="page active" style="display: block;">
+  <section class="info-hero">
+    <span class="info-icon">🔍</span>
+    <h1 class="info-title" style="font-size: clamp(26px, 4vw, 42px);">Área de Auditoría</h1>
   </section>
 
-  <section class="cards-section">
-    <div class="info-content">
-      <div class="info-card">
-        <h3>📍 Información Institucional</h3>
-        <div class="info-row">
-          <span class="info-row-icon">🏢</span>
-          <div class="info-row-text"><strong>Sede</strong>Lima 865, Rosario</div>
-        </div>
-        <div class="info-row">
-          <span class="info-row-icon">🌐</span>
-          <div class="info-row-text"><strong>Trámites en línea</strong><a href="https://www.rosario.gob.ar" target="_blank" rel="noopener">www.rosario.gob.ar</a></div>
-        </div>
-        <div class="info-row">
-          <span class="info-row-icon">🤖</span>
-          <div class="info-row-text"><strong>MuniBot (Consultas generales)</strong>3415 44-0147</div>
-        </div>
-      </div>
+  <div class="info-content">
+    <button class="btn-back" onclick="window.location.href='index.html'">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <p style="text-align:center; color: var(--gray-600); margin-bottom: 24px; font-size: 16px;">
+      Acompañamiento, asesoramiento, fiscalización y articulación para procesos seguros.
+    </p>
+
+    <div class="info-card">
+      <h3>⚙️ Funciones</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Asesoramiento:</strong> L a V 9 a 12 hs, Jueves 15 a 18 hs</li>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Fiscalización</strong></li>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Articulación:</strong> ASSAL, municipio</li>
+      </ul>
     </div>
-  </section>
+
+    <div class="info-card">
+      <h3>📁 Documentación</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;">Director Técnico</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Manual de Buenas Prácticas de Manufactura</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Circuitos y registros (materias primas, limpieza, temperaturas)</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>🔄 Circuito sanitario – BPM</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;">Filtro sanitario del personal</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Proveedores habilitados</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Condiciones edilicias y limpieza</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Control de plagas mensual</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Conservación del producto terminado</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>💡 Definición clave</h3>
+      <p style="font-size: 14px; line-height: 1.6; color: var(--gray-600);">
+        Las <strong>Buenas Prácticas de Manufactura (BPM)</strong> constituyen el eje transversal del proceso de elaboración y son la principal herramienta para prevenir riesgos y contaminación cruzada.
+      </p>
+    </div>
+  </div>
 
   <footer>
     <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>

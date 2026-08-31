@@ -298,7 +298,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,102,204,0.3) 0%, transparent 70%),
     radial-gradient(ellipse 40% 40% at 80% 100%, rgba(240,165,0,0.15) 0%, transparent 60%);
   pointer-events: none;
@@ -909,31 +909,54 @@ footer a { color: var(--blue-300); text-decoration: none; }
 </div>
 
 
-<div class="page active" id="page-home" style="display: block;">
-  <section class="hero">
-    <div class="hero-badge">📱 Municipalidad de Rosario · Secretaría de Salud Pública</div>
-    <h1 class="hero-title" style="font-size: clamp(26px, 4vw, 42px);">INFORMACIÓN INSTITUCIONAL<br><span>INSTITUTO DEL ALIMENTO "DR. BENJAMÍN BERISSO"</span></h1>
+<div class="page active" style="display: block;">
+  <section class="info-hero">
+    <span class="info-icon">👩‍🏫</span>
+    <h1 class="info-title" style="font-size: clamp(26px, 4vw, 42px);">Departamento de Educación<br>y Epidemiología de ETA</h1>
   </section>
 
-  <section class="cards-section">
-    <div class="info-content">
-      <div class="info-card">
-        <h3>📍 Información Institucional</h3>
-        <div class="info-row">
-          <span class="info-row-icon">🏢</span>
-          <div class="info-row-text"><strong>Sede</strong>Lima 865, Rosario</div>
-        </div>
-        <div class="info-row">
-          <span class="info-row-icon">🌐</span>
-          <div class="info-row-text"><strong>Trámites en línea</strong><a href="https://www.rosario.gob.ar" target="_blank" rel="noopener">www.rosario.gob.ar</a></div>
-        </div>
-        <div class="info-row">
-          <span class="info-row-icon">🤖</span>
-          <div class="info-row-text"><strong>MuniBot (Consultas generales)</strong>3415 44-0147</div>
-        </div>
-      </div>
+  <div class="info-content">
+    <button class="btn-back" onclick="window.location.href='index.html'">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <p style="text-align:center; color: var(--gray-600); margin-bottom: 24px; font-size: 16px;">
+      Carnet de Manipulación de Alimentos, renovación, talleres y consultas frecuentes.
+    </p>
+
+    <div class="info-card">
+      <h3>📋 Nuevo Carnet</h3>
+      <div class="info-row"><span class="info-row-icon">⏰</span><div class="info-row-text"><strong>Inscripción:</strong> L a V de 8 a 9 hs (portal oficial).</div></div>
     </div>
-  </section>
+
+    <div class="info-card" id="renovacion">
+      <h3>🔄 Renovación</h3>
+      <div class="info-row"><span class="info-row-icon">🏢</span><div class="info-row-text"><strong>Turnos presenciales:</strong> en Lima 865 (L a V de 8 a 12 hs).</div></div>
+    </div>
+
+    <div class="info-card" id="jardines">
+      <h3>🏫 Jardines de Infantes</h3>
+      <div class="info-row"><span class="info-row-icon">🗓️</span><div class="info-row-text"><strong>Taller presencial:</strong> de 2 encuentros.</div></div>
+      <div class="info-row"><span class="info-row-icon">✉️</span><div class="info-row-text"><strong>Inscripción:</strong> por correo.</div></div>
+    </div>
+
+    <div class="info-card" id="faq">
+      <h3>❓ Consultas</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;">Asistencia obligatoria</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Los pagos demoran 72hs</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Carnet digital post-aprobación</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>📞 Contacto</h3>
+      <div class="info-row"><span class="info-row-icon">📧</span><div class="info-row-text">educativo_ia@rosario.gov.ar</div></div>
+      <div class="info-row"><span class="info-row-icon">☎️</span><div class="info-row-text">Tel: 341-5117495 | Int: 218</div></div>
+      <div class="info-row"><span class="info-row-icon">📍</span><div class="info-row-text">Lima 865 (L a V 8 a 12 hs)</div></div>
+    </div>
+  </div>
 
   <footer>
     <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
