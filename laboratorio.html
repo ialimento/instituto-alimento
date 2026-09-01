@@ -893,7 +893,7 @@ footer a { color: var(--blue-300); text-decoration: none; }
     <li><a href="administracion.html">Administración</a></li>
     <li><a href="auditoria.html">Auditoría</a></li>
     <li><a href="laboratorio.html">Laboratorio</a></li>
-    <li><a href="educativo.html" class="nav-cta">Educación y ETA</a></li>
+    <li><a href="educativo.html" >Educación y ETA</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -1084,6 +1084,20 @@ window.addEventListener('scroll', () => {
   const total = document.documentElement.scrollHeight - window.innerHeight;
   const pct = total > 0 ? (scrolled / total) * 100 : 0;
   document.getElementById('scrollProgress').style.width = pct + '%';
+});
+
+/* ══════════════════════════
+   DYNAMIC NAV ACTIVE STATE
+══════════════════════════ */
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a, .mobile-menu a").forEach(link => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
 });
 </script>
 </body>
