@@ -882,19 +882,31 @@ footer a { color: var(--blue-300); text-decoration: none; }
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
+<<<<<<< HEAD
   <div class="nav-brand" onclick="showPage('home')">
+=======
+  <div class="nav-brand" href="index.html">
+>>>>>>> PR2
     <div class="nav-brand-text">
       <span class="nav-brand-title">Instituto del Alimento</span>
       <span class="nav-brand-sub">Municipalidad de Rosario</span>
     </div>
   </div>
   <ul class="nav-links">
+<<<<<<< HEAD
     <li><a href="index.html">⬅️ Volver al Portal</a></li>
     <li><a onclick="showPage('home')" id="nav-home">Inicio</a></li>
     <li><a onclick="showPage('nuevo-carnet')" id="nav-nuevo-carnet">Nuevo Carnet</a></li>
     <li><a onclick="showPage('renovacion')" id="nav-renovacion">Renovación</a></li>
     <li><a onclick="showPage('jardines')" id="nav-jardines">Jardines</a></li>
     <li><a onclick="showPage('faq')" id="nav-faq" class="nav-cta">Consultas Frecuentes</a></li>
+=======
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="administracion.html">Administración</a></li>
+    <li><a href="auditoria.html">Auditoría</a></li>
+    <li><a href="laboratorio.html">Laboratorio</a></li>
+    <li><a href="educativo.html" class="nav-cta">Educación y ETA</a></li>
+>>>>>>> PR2
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -902,6 +914,7 @@ footer a { color: var(--blue-300); text-decoration: none; }
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
+<<<<<<< HEAD
   <a href="index.html">⬅️ Volver al Portal</a>
   <a onclick="showPage('home');toggleMenu()">🏠 Inicio</a>
   <a onclick="showPage('nuevo-carnet');toggleMenu()">📋 Nuevo Carnet</a>
@@ -933,6 +946,80 @@ footer a { color: var(--blue-300); text-decoration: none; }
 <!-- ════════════════════════════════
      README para GitHub
 ════════════════════════════════ -->
+=======
+  <a href="index.html">🏠 Inicio</a>
+  <a href="administracion.html">📋 Administración</a>
+  <a href="auditoria.html">🔍 Auditoría</a>
+  <a href="laboratorio.html">🔬 Laboratorio</a>
+  <a href="educativo.html">👩‍🏫 Educación y ETA</a>
+</div>
+
+
+<div class="page active" style="display: block;">
+  <section class="info-hero">
+    <span class="info-icon">📋</span>
+    <h1 class="info-title" style="font-size: clamp(26px, 4vw, 42px);">Departamento de Administración<br>y Atención al Ciudadano</h1>
+  </section>
+
+  <div class="info-content">
+    <button class="btn-back" onclick="window.location.href='index.html'">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <p style="text-align:center; color: var(--gray-600); margin-bottom: 24px; font-size: 16px;">
+      Trámites administrativos, atención y canales de consulta.
+    </p>
+
+    <div class="info-card">
+      <h3>🚗 Habilitación y renovación de vehículos</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Unidad de Transporte de Alimentos (nacional)</strong></li>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Unidad de Reparto de Alimentos (local)</strong></li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>🏪 Comercialización de productos a terceros</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>RNE (nacional)</strong></li>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>RME (local)</strong></li>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>MES (microemprendimiento social)</strong></li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>📄 Otras gestiones</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;">Recepción de reclamos (SUACI/147)</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Emisión de cupones</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Cobros de análisis e inscripciones</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Consultas sobre muestras libres de gluten</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Envío de protocolos</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>📞 Canales de atención</h3>
+      <div class="info-row"><span class="info-row-icon">📧</span><div class="info-row-text">administracion_ia@rosario.gov.ar</div></div>
+      <div class="info-row"><span class="info-row-icon">⏰</span><div class="info-row-text">8 a 13 hs</div></div>
+      <div class="info-row"><span class="info-row-icon">☎️</span><div class="info-row-text">Tel: 341 5117495 / 341 3859697 (Int: 224 / 226 / 214)</div></div>
+      <div class="info-row"><span class="info-row-icon">💬</span><div class="info-row-text">Reclamos: SUACI o 147</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
+    Municipalidad de Rosario · Secretaría de Salud Pública<br>
+    Lima 865, Rosario<br>
+    Phone: 341-5117495 | Int: 218<br>
+    Email: educativo_ia@rosario.gov.ar<br>
+    Web: <a href="https://www.rosario.gob.ar" target="_blank" rel="noopener">rosario.gob.ar</a>
+  </footer>
+</div>
+
+
+>>>>>>> PR2
 <script>
 /* ══════════════════════════
    CANVAS BACKGROUND ANIMATION
@@ -993,6 +1080,7 @@ animate();
 window.addEventListener('resize', () => { resize(); initParticles(); });
 
 /* ══════════════════════════
+<<<<<<< HEAD
    ROUTING
 ══════════════════════════ */
 const pages = ['home', 'nuevo-carnet', 'renovacion', 'jardines', 'faq'];
@@ -1026,6 +1114,8 @@ const initHash = location.hash.replace('#', '') || 'home';
 if (pages.includes(initHash)) showPage(initHash);
 
 /* ══════════════════════════
+=======
+>>>>>>> PR2
    HAMBURGER MENU
 ══════════════════════════ */
 function toggleMenu() {
@@ -1074,4 +1164,8 @@ window.addEventListener('scroll', () => {
 });
 </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> PR2
