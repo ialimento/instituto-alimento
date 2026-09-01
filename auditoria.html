@@ -882,19 +882,18 @@ footer a { color: var(--blue-300); text-decoration: none; }
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-brand" onclick="showPage('home')">
+  <div class="nav-brand" href="index.html">
     <div class="nav-brand-text">
       <span class="nav-brand-title">Instituto del Alimento</span>
       <span class="nav-brand-sub">Municipalidad de Rosario</span>
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html">⬅️ Volver al Portal</a></li>
-    <li><a onclick="showPage('home')" id="nav-home">Inicio</a></li>
-    <li><a onclick="showPage('nuevo-carnet')" id="nav-nuevo-carnet">Nuevo Carnet</a></li>
-    <li><a onclick="showPage('renovacion')" id="nav-renovacion">Renovación</a></li>
-    <li><a onclick="showPage('jardines')" id="nav-jardines">Jardines</a></li>
-    <li><a onclick="showPage('faq')" id="nav-faq" class="nav-cta">Consultas Frecuentes</a></li>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="administracion.html">Administración</a></li>
+    <li><a href="auditoria.html">Auditoría</a></li>
+    <li><a href="laboratorio.html">Laboratorio</a></li>
+    <li><a href="educativo.html" class="nav-cta">Educación y ETA</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -902,37 +901,78 @@ footer a { color: var(--blue-300); text-decoration: none; }
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">⬅️ Volver al Portal</a>
-  <a onclick="showPage('home');toggleMenu()">🏠 Inicio</a>
-  <a onclick="showPage('nuevo-carnet');toggleMenu()">📋 Nuevo Carnet</a>
-  <a onclick="showPage('renovacion');toggleMenu()">🔄 Renovación</a>
-  <a onclick="showPage('jardines');toggleMenu()">👩‍🏫 Jardines de Infantes</a>
-  <a onclick="showPage('faq');toggleMenu()">❓ Consultas Frecuentes</a>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="administracion.html">📋 Administración</a>
+  <a href="auditoria.html">🔍 Auditoría</a>
+  <a href="laboratorio.html">🔬 Laboratorio</a>
+  <a href="educativo.html">👩‍🏫 Educación y ETA</a>
 </div>
 
-<!-- ════════════════════════════════
-     PAGE: CONTENT
-════════════════════════════════ -->
-<div class="page active" id="page-home">
-  <section class="hero">
-    <div class="hero-badge">📱 Municipalidad de Rosario · Secretaría de Salud Pública</div>
-    <h1 class="hero-title">Departamento de<br><span>Auditoría</span></h1>
+
+<div class="page active" style="display: block;">
+  <section class="info-hero">
+    <span class="info-icon">🔍</span>
+    <h1 class="info-title" style="font-size: clamp(26px, 4vw, 42px);">Área de Auditoría</h1>
   </section>
-  <section class="cards-section">
-    <h2 class="section-title">Sección en Construcción</h2>
-    <p style="text-align: center; color: var(--gray-600); font-size: 1.2rem; margin-top: 2rem;">El contenido de esta sección estará disponible próximamente.</p>
-  </section>
+
+  <div class="info-content">
+    <button class="btn-back" onclick="window.location.href='index.html'">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </button>
+
+    <p style="text-align:center; color: var(--gray-600); margin-bottom: 24px; font-size: 16px;">
+      Acompañamiento, asesoramiento, fiscalización y articulación para procesos seguros.
+    </p>
+
+    <div class="info-card">
+      <h3>⚙️ Funciones</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Asesoramiento:</strong> L a V 9 a 12 hs, Jueves 15 a 18 hs</li>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Fiscalización</strong></li>
+        <li style="margin-left: 20px; padding: 4px 0;"><strong>Articulación:</strong> ASSAL, municipio</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>📁 Documentación</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;">Director Técnico</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Manual de Buenas Prácticas de Manufactura</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Circuitos y registros (materias primas, limpieza, temperaturas)</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>🔄 Circuito sanitario – BPM</h3>
+      <ul>
+        <li style="margin-left: 20px; padding: 4px 0;">Filtro sanitario del personal</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Proveedores habilitados</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Condiciones edilicias y limpieza</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Control de plagas mensual</li>
+        <li style="margin-left: 20px; padding: 4px 0;">Conservación del producto terminado</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h3>💡 Definición clave</h3>
+      <p style="font-size: 14px; line-height: 1.6; color: var(--gray-600);">
+        Las <strong>Buenas Prácticas de Manufactura (BPM)</strong> constituyen el eje transversal del proceso de elaboración y son la principal herramienta para prevenir riesgos y contaminación cruzada.
+      </p>
+    </div>
+  </div>
+
   <footer>
     <strong>Instituto del Alimento "Dr. Benjamín Berisso"</strong><br>
     Municipalidad de Rosario · Secretaría de Salud Pública<br>
-    Lima 865, Rosario · Lunes a viernes 8 a 12 hs<br>
-    <a href="mailto:educativo_ia@rosario.gob.ar">educativo_ia@rosario.gob.ar</a><br><br>
-    Última actualización: Mayo 2026
+    Lima 865, Rosario<br>
+    Phone: 341-5117495 | Int: 218<br>
+    Email: educativo_ia@rosario.gov.ar<br>
+    Web: <a href="https://www.rosario.gob.ar" target="_blank" rel="noopener">rosario.gob.ar</a>
   </footer>
 </div>
-<!-- ════════════════════════════════
-     README para GitHub
-════════════════════════════════ -->
+
+
 <script>
 /* ══════════════════════════
    CANVAS BACKGROUND ANIMATION
@@ -991,39 +1031,6 @@ resize();
 initParticles();
 animate();
 window.addEventListener('resize', () => { resize(); initParticles(); });
-
-/* ══════════════════════════
-   ROUTING
-══════════════════════════ */
-const pages = ['home', 'nuevo-carnet', 'renovacion', 'jardines', 'faq'];
-
-function showPage(id) {
-  pages.forEach(p => {
-    document.getElementById('page-' + p)?.classList.remove('active');
-    const navEl = document.getElementById('nav-' + p);
-    if (navEl) navEl.classList.remove('active');
-  });
-  const el = document.getElementById('page-' + id);
-  if (el) {
-    el.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  const navEl = document.getElementById('nav-' + id);
-  if (navEl) navEl.classList.add('active');
-
-  // Update hash without triggering scroll
-  history.pushState(null, '', '#' + id);
-}
-
-// Handle browser back/forward
-window.addEventListener('popstate', () => {
-  const hash = location.hash.replace('#', '') || 'home';
-  if (pages.includes(hash)) showPage(hash);
-});
-
-// Initial load from hash
-const initHash = location.hash.replace('#', '') || 'home';
-if (pages.includes(initHash)) showPage(initHash);
 
 /* ══════════════════════════
    HAMBURGER MENU
