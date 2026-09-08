@@ -496,7 +496,7 @@ body {
 ═══════════════════════════════ */
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   margin-bottom: 40px;
 }
@@ -513,6 +513,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .faq-cat-card:hover,
@@ -545,6 +546,7 @@ body {
   border: 1px solid var(--gray-200);
   overflow: hidden;
   transition: var(--transition);
+  font-family: 'Raleway', sans-serif;
 }
 
 .accordion-item:hover { border-color: var(--blue-300); }
@@ -567,6 +569,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .accordion-q-icon {
@@ -581,6 +584,7 @@ body {
   font-size: 14px;
   font-weight: 800;
   flex-shrink: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 .accordion-chevron {
@@ -597,6 +601,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Raleway', sans-serif;
 }
 
 .accordion-body-inner {
@@ -604,6 +609,7 @@ body {
   font-size: 14px;
   line-height: 1.7;
   color: var(--gray-600);
+  font-family: 'Raleway', sans-serif;
 }
 
 .accordion-body-inner strong { color: var(--gray-800); }
@@ -618,6 +624,7 @@ body {
   margin-top: 10px;
   font-size: 13px;
   color: var(--gray-800);
+  font-family: 'Raleway', sans-serif;
 }
 
 .accordion-body-inner .ok {
@@ -631,6 +638,7 @@ body {
   margin-top: 10px;
   font-size: 13px;
   color: var(--gray-800);
+  font-family: 'Raleway', sans-serif;
 }
 
 /* ═══════════════════════════════
@@ -674,9 +682,10 @@ body {
 }
 
 .info-content {
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 40px 24px 64px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .info-card {
@@ -686,11 +695,12 @@ body {
   box-shadow: var(--shadow);
   border: 1px solid var(--gray-200);
   margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .info-card h3 {
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--gray-800);
   margin-bottom: 14px;
@@ -707,13 +717,14 @@ body {
   border-bottom: 1px solid var(--gray-100);
   font-size: 14px;
   line-height: 1.5;
+  font-family: 'Raleway', sans-serif;
 }
 
 .info-row:last-child { border-bottom: none; padding-bottom: 0; }
 .info-row:first-child { padding-top: 0; }
 
 .info-row-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-.info-row-text { color: var(--gray-600); }
+.info-row-text { color: var(--gray-600); font-family: 'Raleway', sans-serif; }
 .info-row-text strong { color: var(--gray-800); display: block; margin-bottom: 2px; }
 
 .tag-group {
@@ -731,6 +742,7 @@ body {
   border-radius: 99px;
   font-size: 13px;
   font-weight: 600;
+  font-family: 'Raleway', sans-serif;
 }
 
 .tag-green { background: rgba(26,107,60,0.1); color: var(--green-ok); }
@@ -777,6 +789,7 @@ body {
   margin-bottom: 24px;
   transition: var(--transition);
   text-decoration: none;
+  font-family: 'Raleway', sans-serif;
 }
 
 .btn-back:hover { color: var(--blue-700); gap: 12px; }
@@ -793,6 +806,7 @@ footer {
   line-height: 1.8;
   position: relative;
   z-index: 1;
+  font-family: 'Raleway', sans-serif;
 }
 
 footer strong { color: rgba(255,255,255,0.8); }
@@ -882,12 +896,12 @@ footer a { color: var(--blue-300); text-decoration: none; }
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-brand" href="index.html">
+  <a class="nav-brand" href="index.html">
     <div class="nav-brand-text">
       <span class="nav-brand-title">Instituto del Alimento</span>
       <span class="nav-brand-sub">Municipalidad de Rosario</span>
     </div>
-  </div>
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
     <li><a href="administracion.html">Administración</a></li>
@@ -922,40 +936,254 @@ footer a { color: var(--blue-300); text-decoration: none; }
     </button>
 
     <p style="text-align:center; color: var(--gray-600); margin-bottom: 24px; font-size: 16px;">
-      Carnet de Manipulación de Alimentos, renovación, talleres y consultas frecuentes.
+      Información sobre el Carnet de Manipulación de Alimentos, procedimientos y preguntas frecuentes organizadas por temáticas.
     </p>
 
+    <!-- FAQ SECTION WITH CATEGORIES AND ACCORDEONS -->
     <div class="info-card">
-      <h3>📋 Nuevo Carnet</h3>
-      <div class="info-row"><span class="info-row-icon">⏰</span><div class="info-row-text"><strong>Inscripción:</strong> L a V de 8 a 9 hs (portal oficial).</div></div>
+      <div class="section-label">Preguntas Frecuentes y Procedimientos</div>
+      <h2 style="font-family: 'Raleway', sans-serif; font-size: 22px; margin-bottom: 20px; color: var(--gray-800);">Seleccione una categoría</h2>
+
+      <!-- Category Grid -->
+      <div class="faq-grid">
+        <div class="faq-cat-card active" onclick="showFaqPanel('renovacion', this)">
+          <span class="faq-cat-icon">🔄</span>
+          <span class="faq-cat-title">Renovación de Carnet</span>
+        </div>
+        <div class="faq-cat-card" onclick="showFaqPanel('inscripcion', this)">
+          <span class="faq-cat-icon">📝</span>
+          <span class="faq-cat-title">Inscripción y Cupos</span>
+        </div>
+        <div class="faq-cat-card" onclick="showFaqPanel('pagos', this)">
+          <span class="faq-cat-icon">💳</span>
+          <span class="faq-cat-title">Pagos y Costos</span>
+        </div>
+        <div class="faq-cat-card" onclick="showFaqPanel('soporte', this)">
+          <span class="faq-cat-icon">💻</span>
+          <span class="faq-cat-title">Soporte Técnico y Errores</span>
+        </div>
+        <div class="faq-cat-card" onclick="showFaqPanel('laboratorio', this)">
+          <span class="faq-cat-icon">🔬</span>
+          <span class="faq-cat-title">Laboratorio y Auditoría</span>
+        </div>
+      </div>
+
+      <!-- FAQ Panels -->
+      <div class="faq-panels">
+
+        <!-- Panel 1: Renovación de Carnet -->
+        <div class="faq-panel active" id="panel-renovacion">
+          <h3 style="margin-bottom: 16px; color: var(--blue-700);">🔄 Renovación de Carnet</h3>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Cuándo debo realizar la renovación del carnet?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                La renovación aplica para aquellos carnets cuyo vencimiento corresponde a los años 2025, 2026 o 2027. Se realiza mediante un trámite presencial en las dependencias del Instituto del Alimento.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Qué ocurre si mi carnet venció en 2024 o antes?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Si el carnet venció en el año 2024 o con anterioridad, no corresponde el trámite de renovación. En estos casos, se debe realizar nuevamente la capacitación completa tramitando un <strong>Nuevo Carnet</strong>.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Dónde y en qué horario se realiza la atención presencial?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                La atención presencial para renovación de carnet se realiza en la sede del Instituto del Alimento en <strong>Lima 865</strong>, de lunes a viernes en el horario de 8:00 a 12:00 hs.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Inscripción y Cupos -->
+        <div class="faq-panel" id="panel-inscripcion">
+          <h3 style="margin-bottom: 16px; color: var(--blue-700);">📝 Inscripción y Cupos</h3>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Cómo y cuándo me inscribo para la capacitación de Nuevo Carnet?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Las inscripciones online se habilitan de lunes a viernes de 8:00 a 9:00 hs a través del portal oficial de la Municipalidad de Rosario.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Qué debo hacer si los cupos del día están agotados?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Los cupos diarios son limitados para garantizar la calidad del servicio. Si el sistema indica que la agenda se encuentra completa, deberá intentar conectarse nuevamente al siguiente día hábil a partir de las 8:00 hs.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Cuál es el procedimiento para Jardines de Infantes?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                El personal de jardines de infantes cuenta con una modalidad especial de taller presencial de 2 encuentros. La solicitud e inscripción debe coordinarse previamente mediante correo electrónico a <strong>educativo_ia@rosario.gov.ar</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Pagos y Costos -->
+        <div class="faq-panel" id="panel-pagos">
+          <h3 style="margin-bottom: 16px; color: var(--blue-700);">💳 Pagos y Costos</h3>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Cuánto tardan en acreditarse los pagos realizados?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                La acreditación de pagos en el sistema puede demorar hasta <strong>72 horas hábiles</strong>. Es sumamente importante abonar los cupones con la suficiente anticipación requerida antes de la fecha fijada.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Dónde se realiza el pago del trámite de carnet?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Los pagos se efectúan a través de las liquidaciones de tasas emitidas por el portal municipal en los canales habilitados (entidades bancarias, Santa Fe Servicios o medios de pago electrónico autorizados).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Soporte Técnico y Errores -->
+        <div class="faq-panel" id="panel-soporte">
+          <h3 style="margin-bottom: 16px; color: var(--blue-700);">💻 Soporte Técnico y Errores</h3>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Dónde puedo consultar el estado de mi carnet digital posterior a la aprobación?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Una vez cumplidos los requisitos y aprobada la evaluación, el carnet digital se encuentra disponible en la plataforma oficial o app municipal. Ante dudas o fallas en el acceso al carnet digital post-aprobación, contáctenos por e-mail.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Qué debo hacer ante un error en la plataforma de cursado o inscripción?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Si experimenta problemas técnicos durante el proceso, envíe un correo electrónico detallado indicando su DNI, nombre completo y captura de pantalla del inconveniente a <strong>educativo_ia@rosario.gov.ar</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 5: Laboratorio y Auditoría -->
+        <div class="faq-panel" id="panel-laboratorio">
+          <h3 style="margin-bottom: 16px; color: var(--blue-700);">🔬 Laboratorio y Auditoría</h3>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div class="accordion-q">
+                <span class="accordion-q-icon">?</span>
+                <span>¿Dónde realizo consultas relacionadas con trámites de auditoría y laboratorio?</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Las consultas sobre análisis alimenticios (agua, gluten, microbiológicos) o auditorías técnicas pueden derivarse directamente a las secciones correspondientes o consultarse en las dependencias del Instituto del Alimento.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="info-card" id="renovacion">
-      <h3>🔄 Renovación</h3>
-      <div class="info-row"><span class="info-row-icon">🏢</span><div class="info-row-text"><strong>Turnos presenciales:</strong> en Lima 865 (L a V de 8 a 12 hs).</div></div>
+    <!-- BLOQUE DE CONTACTO GENERAL DEL ÁREA EDUCATIVA -->
+    <div class="info-card" id="contacto-educativo" style="border-left: 4px solid var(--blue-600); background: var(--blue-50);">
+      <h3>📞 Contacto General del Área Educativa</h3>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">
+        Para asistencia adicional, orientación o consultas específicas sobre trámites educativos, podés comunicarse con nosotros a través de los siguientes medios oficiales:
+      </p>
+      <div class="info-row">
+        <span class="info-row-icon">☎️</span>
+        <div class="info-row-text"><strong>Teléfono:</strong> 341-5117495 | Int: 218</div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">📧</span>
+        <div class="info-row-text"><strong>Correo electrónico:</strong> <a href="mailto:educativo_ia@rosario.gov.ar" style="color: var(--blue-600); text-decoration: underline;">educativo_ia@rosario.gov.ar</a></div>
+      </div>
+      <div class="info-row">
+        <span class="info-row-icon">📍</span>
+        <div class="info-row-text"><strong>Atención presencial:</strong> Lima 865, Rosario (Lunes a viernes de 8:00 a 12:00 hs)</div>
+      </div>
     </div>
 
-    <div class="info-card" id="jardines">
-      <h3>🏫 Jardines de Infantes</h3>
-      <div class="info-row"><span class="info-row-icon">🗓️</span><div class="info-row-text"><strong>Taller presencial:</strong> de 2 encuentros.</div></div>
-      <div class="info-row"><span class="info-row-icon">✉️</span><div class="info-row-text"><strong>Inscripción:</strong> por correo.</div></div>
-    </div>
-
-    <div class="info-card" id="faq">
-      <h3>❓ Consultas</h3>
-      <ul>
-        <li style="margin-left: 20px; padding: 4px 0;">Asistencia obligatoria</li>
-        <li style="margin-left: 20px; padding: 4px 0;">Los pagos demoran 72hs</li>
-        <li style="margin-left: 20px; padding: 4px 0;">Carnet digital post-aprobación</li>
-      </ul>
-    </div>
-
-    <div class="info-card">
-      <h3>📞 Contacto</h3>
-      <div class="info-row"><span class="info-row-icon">📧</span><div class="info-row-text">educativo_ia@rosario.gov.ar</div></div>
-      <div class="info-row"><span class="info-row-icon">☎️</span><div class="info-row-text">Tel: 341-5117495 | Int: 218</div></div>
-      <div class="info-row"><span class="info-row-icon">📍</span><div class="info-row-text">Lima 865 (L a V 8 a 12 hs)</div></div>
-    </div>
   </div>
 
   <footer>
