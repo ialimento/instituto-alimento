@@ -943,7 +943,7 @@ footer a { color: var(--blue-300); text-decoration: none; }
     <div class="info-card">
       <div class="section-label">Preguntas Frecuentes y Procedimientos</div>
       <h2 style="font-family: 'Raleway', sans-serif; font-size: 22px; margin-bottom: 20px; color: var(--gray-800);">Seleccione una categoría</h2>
-
+      
       <!-- Category Grid -->
       <div class="faq-grid">
         <div class="faq-cat-card active" onclick="showFaqPanel('renovacion', this)">
@@ -970,11 +970,11 @@ footer a { color: var(--blue-300); text-decoration: none; }
 
       <!-- FAQ Panels -->
       <div class="faq-panels">
-
+        
         <!-- Panel 1: Renovación de Carnet -->
         <div class="faq-panel active" id="panel-renovacion">
           <h3 style="margin-bottom: 16px; color: var(--blue-700);">🔄 Renovación de Carnet</h3>
-
+          
           <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
               <div class="accordion-q">
@@ -1024,7 +1024,7 @@ footer a { color: var(--blue-300); text-decoration: none; }
         <!-- Panel 2: Inscripción y Cupos -->
         <div class="faq-panel" id="panel-inscripcion">
           <h3 style="margin-bottom: 16px; color: var(--blue-700);">📝 Inscripción y Cupos</h3>
-
+          
           <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
               <div class="accordion-q">
@@ -1074,7 +1074,7 @@ footer a { color: var(--blue-300); text-decoration: none; }
         <!-- Panel 3: Pagos y Costos -->
         <div class="faq-panel" id="panel-pagos">
           <h3 style="margin-bottom: 16px; color: var(--blue-700);">💳 Pagos y Costos</h3>
-
+          
           <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
               <div class="accordion-q">
@@ -1109,7 +1109,7 @@ footer a { color: var(--blue-300); text-decoration: none; }
         <!-- Panel 4: Soporte Técnico y Errores -->
         <div class="faq-panel" id="panel-soporte">
           <h3 style="margin-bottom: 16px; color: var(--blue-700);">💻 Soporte Técnico y Errores</h3>
-
+          
           <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
               <div class="accordion-q">
@@ -1144,7 +1144,7 @@ footer a { color: var(--blue-300); text-decoration: none; }
         <!-- Panel 5: Laboratorio y Auditoría -->
         <div class="faq-panel" id="panel-laboratorio">
           <h3 style="margin-bottom: 16px; color: var(--blue-700);">🔬 Laboratorio y Auditoría</h3>
-
+          
           <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
               <div class="accordion-q">
@@ -1267,18 +1267,23 @@ function toggleMenu() {
 /* ══════════════════════════
    ACCORDION
 ══════════════════════════ */
-function toggleAccordion(item) {
+function toggleAccordion(header) {
+  const item = header.closest('.accordion-item');
+  if (!item) return;
   const isOpen = item.classList.contains('open');
   // Close all in same panel
   const panel = item.closest('.faq-panel');
-  panel.querySelectorAll('.accordion-item.open').forEach(i => {
-    i.classList.remove('open');
-    i.querySelector('.accordion-body').style.maxHeight = null;
-  });
+  if (panel) {
+    panel.querySelectorAll('.accordion-item.open').forEach(i => {
+      i.classList.remove('open');
+      const body = i.querySelector('.accordion-body');
+      if (body) body.style.maxHeight = null;
+    });
+  }
   if (!isOpen) {
     item.classList.add('open');
     const body = item.querySelector('.accordion-body');
-    body.style.maxHeight = body.scrollHeight + 'px';
+    if (body) body.style.maxHeight = body.scrollHeight + 'px';
   }
 }
 
