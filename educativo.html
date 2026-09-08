@@ -1267,18 +1267,23 @@ function toggleMenu() {
 /* ══════════════════════════
    ACCORDION
 ══════════════════════════ */
-function toggleAccordion(item) {
+function toggleAccordion(header) {
+  const item = header.closest('.accordion-item');
+  if (!item) return;
   const isOpen = item.classList.contains('open');
   // Close all in same panel
   const panel = item.closest('.faq-panel');
-  panel.querySelectorAll('.accordion-item.open').forEach(i => {
-    i.classList.remove('open');
-    i.querySelector('.accordion-body').style.maxHeight = null;
-  });
+  if (panel) {
+    panel.querySelectorAll('.accordion-item.open').forEach(i => {
+      i.classList.remove('open');
+      const body = i.querySelector('.accordion-body');
+      if (body) body.style.maxHeight = null;
+    });
+  }
   if (!isOpen) {
     item.classList.add('open');
     const body = item.querySelector('.accordion-body');
-    body.style.maxHeight = body.scrollHeight + 'px';
+    if (body) body.style.maxHeight = body.scrollHeight + 'px';
   }
 }
 
