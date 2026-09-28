@@ -2,33 +2,34 @@
 
 Sitio web informativo del **Instituto del Alimento "Dr. Benjamín Berisso"**, dependiente de la Secretaría de Salud Pública de la Municipalidad de Rosario.
 
-🔗 **[Ver sitio en vivo](https://cbertol0.github.io/instituto-alimento/)**
+🔗 **[Ver sitio en vivo](https://ialimento.github.io/instituto-alimento/)**
 
 ---
 
 ## Descripción
 
-Microsite de una sola página orientado a ciudadanos que necesitan gestionar trámites relacionados con el carnet de manipulación de alimentos. Reemplaza la consulta directa por mail o teléfono, centralizando la información más frecuente en un formato claro y accesible desde cualquier dispositivo.
+Sitio informativo orientado a ciudadanos que necesitan hacer trámites en el Instituto: carnet de manipulación de alimentos, análisis de laboratorio, auditoría y gestiones administrativas. Centraliza la información más consultada para reducir las consultas por mail y teléfono.
 
 ---
 
-## Secciones
+## Páginas
 
-- **Inicio** — presentación general y acceso rápido a los trámites
-- **Nuevo Carnet** — pasos para tramitar el carnet por primera vez o si el anterior venció en 2024 o antes
-- **Renovación** — información para carnets con vencimiento 2025, 2026 o 2027
-- **Jardines de Infantes** — modalidad especial de taller presencial para personal de jardines
-- **Consultas Frecuentes** — FAQ categorizada sobre turnos, pagos, carnet digital y renovación
+- **Inicio** (`index.html`): accesos rápidos a los trámites más frecuentes y a los departamentos
+- **Educación y ETA** (`educativo.html`): nuevo carnet, renovación, jardines de infantes, preguntas frecuentes y contacto
+- **Laboratorio** (`laboratorio.html`): turnos, recepción de muestras y análisis
+- **Auditoría** (`auditoria.html`): funciones, documentación y circuito sanitario (BPM)
+- **Administración** (`administracion.html`): vehículos, registros, otras gestiones y canales de atención
 
 ---
 
 ## Características técnicas
 
-- SPA (Single Page Application) en HTML/CSS/JS puro, sin dependencias ni frameworks
-- Navegación por secciones sin recarga de página
-- Diseño responsive, optimizado para móvil
-- Metadata Open Graph completa (thumbnail automático al compartir por WhatsApp, redes sociales)
-- Sin backend — deployable directamente en GitHub Pages
+- HTML/CSS con una sola hoja de estilos compartida (`assets/css/site.css`), sin frameworks
+- Tipografía Raleway y logos oficiales alojados en el propio repo
+- Íconos SVG (Lucide) en `assets/img/icons.svg`
+- Preguntas frecuentes con `<details>`, que funcionan sin JavaScript
+- Diseño responsive, pensado primero para el celular
+- Metadatos Open Graph (vista previa al compartir por WhatsApp)
 
 ---
 
