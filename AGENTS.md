@@ -25,3 +25,4 @@
 - Cada departamento muestra su propio contacto y horario en su página. No reemplazar los datos de un área con los de otra.
 - Educación y ETA: Teléfono 341-5117495 | Int: 218 · educativo_ia@rosario.gov.ar · Web: rosario.gob.ar
 - No modificar mails, teléfonos ni horarios sin confirmación del equipo.
+- Consultas por WhatsApp (asistente virtual): +54 9 341 385-4998 → https://wa.me/5493413854998. El botón verde flotante lleva a este chat; el canal de WhatsApp (solo novedades) va en el pie y en el inicio.
