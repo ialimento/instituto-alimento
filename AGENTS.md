@@ -5,7 +5,7 @@
 - Todas las páginas comparten `assets/css/site.css` y `assets/js/site.js` (solo el menú del celular).
 - Íconos: Lucide. El juego completo está en `assets/img/icons.svg` y se copia al comienzo del `<body>` de cada página (así funcionan también abriendo el archivo local). Se usan con `<svg class="icon"><use href="#i-NOMBRE"/></svg>`. Para agregar un ícono, sumarlo a `icons.svg` y al bloque de las cinco páginas.
 - NO poner estilos ni scripts dentro de cada página. NO usar emojis como íconos.
-- Cada página repite el mismo encabezado (`.header`), pie (`.footer`) y botón de WhatsApp (`.wa`). Si se cambia uno, cambiarlo en las cinco páginas.
+- Cada página repite el mismo encabezado (`.header`), y pie (`.footer`). Si se cambia uno, cambiarlo en las cinco páginas.
 - Las preguntas frecuentes usan `<details>`/`<summary>` dentro de `.faq`, sin JavaScript.
 
 ## Tipografía y color
@@ -25,4 +25,4 @@
 - Cada departamento muestra su propio contacto y horario en su página. No reemplazar los datos de un área con los de otra.
 - Educación y ETA: Teléfono 341-5117495 | Int: 218 · educativo_ia@rosario.gov.ar · Web: rosario.gob.ar
 - No modificar mails, teléfonos ni horarios sin confirmación del equipo.
-- Consultas por WhatsApp (asistente virtual): +54 9 341 385-4998 → https://wa.me/5493413854998. El botón verde flotante lleva a este chat; el canal de WhatsApp (solo novedades) va en el pie y en el inicio.
+- No publicar el número de consultas por WhatsApp del Instituto (+54 9 341 385-4998): se retiró en noviembre de 2026 porque el bot respondía mal. Para consultas generales se deriva a MuniBot (+54 9 341 544-0147, https://wa.me/5493415440147). El canal de WhatsApp (solo novedades) sigue en el pie y en el inicio.
